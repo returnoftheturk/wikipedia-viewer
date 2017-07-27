@@ -13,7 +13,7 @@ $(document).ready(function(){
         var titles = [];
         var bodyContent = [];
         var links = [];
-        
+
 
         for (var pageId in data.query.pages){
           if (data.query.pages.hasOwnProperty(pageId)){
@@ -22,6 +22,29 @@ $(document).ready(function(){
             links.splice(data.query.pages[pageId].index, 0, data.query.pages[pageId].fullurl);
             // console.log(data.query.pages[pageId].title);
           }
+        }
+        var i=0;
+        for(;i<titles.length;i++){
+          var div = document.createElement('div');
+          div.setAttribute('class','media');
+
+          var aalink = document.createElement('a');
+          aalink.setAttribute('class', 'media-body');
+          aalink.setAttribute('href', links[i]);
+
+          var h4 = document.createElement('h4');
+          h4.setAttribute('class','media-heading');
+          h4.innerHTML = titles[i];
+
+          var p = document.createElement('p');
+          p.innerHTML = bodyContent[i];
+
+          aalink.appendChild(h4);
+          aalink.appendChild(p);
+          div.appendChild(aalink);
+
+          document.getElementById('container').appendChild(div);
+
         }
 
         console.log(titles.join());
