@@ -5,6 +5,15 @@ body{
 .jumbotron{
   margin-top: 10px;
 }
+a{
+  display: block;
+  width: 100%;
+  /*color: white;*/
+  /*text-decoration: none; !important*/
+}
+a:hover{
+  text-decoration: none;
+}
 
 /*input[type=text]{
   width:130px;
