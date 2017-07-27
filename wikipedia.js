@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#searchbutton").click(function(){
 
     $.ajax({
-      url:"https://en.wikipedia.org/w/api.php?action=query&format=json&prop=links%7Cextracts%7Cinfo&rawcontinue=1&generator=search&exsentences=2&exintro=1&explaintext=1&inprop=url",
+      url:"https://en.wikipedia.org/w/api.php?action=query&format=json&prop=links%7Cextracts%7Cinfo&rawcontinue=1&generator=search&exsentences=2&exintro=1&explaintext=1&inprop=url&origin=*",
       data:"gsrsearch="+ $("#search").val(),
       dataType:"json",
       header:{
