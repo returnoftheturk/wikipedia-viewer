@@ -13,6 +13,7 @@ $(document).ready(function(){
         var titles = [];
         var bodyContent = [];
         var links = [];
+        console.log(this.url);
 
 
         for (var pageId in data.query.pages){
@@ -24,6 +25,7 @@ $(document).ready(function(){
           }
         }
         var i=0;
+        $('.media').remove();
         for(;i<titles.length;i++){
           var div = document.createElement('div');
           div.setAttribute('class','media');
@@ -31,6 +33,7 @@ $(document).ready(function(){
           var aalink = document.createElement('a');
           aalink.setAttribute('class', 'media-body');
           aalink.setAttribute('href', links[i]);
+          aalink.setAttribute('target','_blank');
 
           var h4 = document.createElement('h4');
           h4.setAttribute('class','media-heading');
@@ -55,7 +58,6 @@ $(document).ready(function(){
 
         console.log(data);
 
-        console.log(this.url);
       },
       cache:true
     });
